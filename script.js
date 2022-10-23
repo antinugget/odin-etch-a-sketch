@@ -41,10 +41,11 @@ function makeGrid(squaresPerSide) {
 
 function letColor() {
     const divs = document.querySelectorAll('div > div');
-
     divs.forEach((div) => {
         div.addEventListener("mouseover", function(e) {
-            e.target.style.background = 'blue';
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            e.target.style.opacity = 0.7;
+            e.target.style.background = `#${randomColor}`;
         });
     });
 }
